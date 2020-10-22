@@ -11,10 +11,12 @@ class WorkSeedre extends Seeder
      */
     public function run()
     {
-        DB::table('works')->insert([
-            'user_id' => 1,
-            'work_name' => 'test work',
-            'outline' => 'Laravel',
-        ]);
+        for($i = 0; $i < 5; $i++) {
+            DB::table('works')->insert([
+                'user_id' => 1,
+                'work_name' => 'test work' + $i,
+                'outline' => 'Laravel ' + str_random(10),
+            ]);
+        }
     }
 }
